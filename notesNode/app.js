@@ -1,18 +1,10 @@
 console.log('Starting app.js');
-
+//Imports from Node
 const fs = require('fs');
-const os = require('os');
 const _ = require('lodash');
+// Local Requirements- Modules that ive created and am requiring.
 const notes = require('./notes.js');
 
 
-var filteredArray = _.uniq(['Marcus', 1, 'Marcus',1,3,4,5]);
+var filteredArray = _.uniq(['Mike']);
 console.log(filteredArray);
-// console.log(_.isString(true));
-// console.log(_.isString('Andrewnode'));
-
-
-// var user = os.userInfo();
-
-
-// fs.appendFileSync('greetings.txt', `Hello ${user.username} ! You are ${notes.age}.`);
