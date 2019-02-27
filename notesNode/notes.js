@@ -10,6 +10,13 @@ var addNote = (title, body) => {
         title,
         body
     }; 
+    //The variable stores the return value of of readFileSync 
+    var notesString = fs.readFileSync('notes-data.json');
+    //Grabbing the string and returning it as a variable that holds the array.
+    notes = JSON.parse(notesString);
+
+
+
     //Push the Note into the notes empty array.
     notes.push(note);
     /* Call to make a new file with the 
