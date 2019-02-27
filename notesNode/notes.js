@@ -1,7 +1,21 @@
 console.log('starting notes.js');
-
+//requiring the core node module.
+const fs = require('fs');
+//This is the addNote command used in app.js
 var addNote = (title, body) => {
-    console.log('Adding Note', title, body);
+    //Create an Empty Array
+    var notes = [];
+    //Make Something for the array. 
+    var note = {
+        title,
+        body
+    }; 
+    //Push the Note into the notes empty array.
+    notes.push(note);
+    /* Call to make a new file with the 
+    file name and then we pass the content 
+    we want to save, in my case is the stringified notes array. */
+    fs.writeFileSync('notes-data.json', JSON.stringify(notes));
 };
 var getAll = () =>{
     console.log('Getting All the Notes');
