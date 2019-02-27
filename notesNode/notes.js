@@ -10,19 +10,27 @@ var addNote = (title, body) => {
         title,
         body
     }; 
-    //The variable stores the return value of of readFileSync 
-    var notesString = fs.readFileSync('notes-data.json');
-    //Grabbing the string and returning it as a variable that holds the array.
-    notes = JSON.parse(notesString);
+    //Fetch the notes
+    try{
+        //The variable stores the return value of of readFileSync 
+        var notesString = fs.readFileSync('notes-data.json');
+        //Grabbing the string and returning it as a variable that holds the array.
+        notes = JSON.parse(notesString);
+    } catch (e){
 
+    }
 
-
-    //Push the Note into the notes empty array.
+    var duplicateNotes = notes.filter((note) => note.title === title);
+    if (duplicateNotes.length === 0){
+    //Update the note with the new notes.
     notes.push(note);
     /* Call to make a new file with the 
     file name and then we pass the content 
     we want to save, in my case is the stringified notes array. */
     fs.writeFileSync('notes-data.json', JSON.stringify(notes));
+    };
+
+
 };
 var getAll = () =>{
     console.log('Getting All the Notes');
