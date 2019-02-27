@@ -9,8 +9,13 @@ var getAll = () =>{
 var getNote = (title) =>{
     console.log('Getting the note', title);
 };
+var removeNote = (title) =>{
+    console.log('removing the note', title);
+}
 
 module.exports ={
     addNote,
-    getAll
+    getAll,
+    getNote,
+    removeNote
 }

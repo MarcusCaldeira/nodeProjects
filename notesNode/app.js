@@ -16,9 +16,9 @@ if (command === 'add'){
 } else if(command === 'list'){
     notes.getAll();
 } else if(command === 'read'){
-    notes.getNotes(argv.title);
+    notes.getNote(argv.title);
 } else if (command === 'remove'){
-    console.log('Removing Note');
+    notes.removeNote(argv.title);
 }else {
     console.log('command not recognized');
 } 
