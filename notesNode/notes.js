@@ -14,12 +14,14 @@ var addNote = (title, body) => {
     try{
         //The variable stores the return value of of readFileSync 
         var notesString = fs.readFileSync('notes-data.json');
-        //Grabbing the string and returning it as a variable that holds the array.
+        //Grabbing notesString and returning it as a variable that holds the array.
         notes = JSON.parse(notesString);
     } catch (e){
 
     }
-
+    /*Stores an array with all the notes that exist in
+     the notes array that have the title of the note you are 
+     trying to create.*/
     var duplicateNotes = notes.filter((note) => note.title === title);
     if (duplicateNotes.length === 0){
     //Update the note with the new notes.
