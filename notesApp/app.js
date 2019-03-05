@@ -1,8 +1,10 @@
-const getNotes = require('./notes.js')
+//Store the contents of Validator in validator variable. 
+const validator = require('validator');
 
+
+const getNotes = require('./notes.js')
 const msg = getNotes()
 
 console.log(msg)
 
-// const add = require('./utils')
-// const sum = add(4, -2);
+console.log(validator.isEmail('Marcus@example.com'))
