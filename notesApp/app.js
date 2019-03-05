@@ -1,10 +1,13 @@
-//Store the contents of Validator in validator variable. 
-const validator = require('validator');
-
-
+//Core Modules First
+//NPM Packages
+const chalk = require('chalk');
+const yargs = require('yargs');
+// My Own Files
 const getNotes = require('./notes.js')
-const msg = getNotes()
 
-console.log(msg)
 
-console.log(validator.isEmail('Marcus@example.com'))
+
+console.log(process.argv);
+console.log(yargs.argv);
+
+
