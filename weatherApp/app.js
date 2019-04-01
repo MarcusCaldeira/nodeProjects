@@ -1,13 +1,10 @@
-console.log('starting')
-
-setTimeout(() => {
-    console.log('2 SECOND TIMER')
-}, 2000)
-
-setTimeout(() => {
-    console.log('0 Second Timer')
-},0)
+const request = require('request')
 
 
+const url = 'https://api.darksky.net/forecast/c5d46e1b8a00c3c1f9d3790c5b3ee73d/37.8267,-122.4233'
+// The first argument is the URL(declared above in const url, the second is the function you are going to run. )
+request({url:url}, (error, response) => {
+    const data = JSON.parse(response.body)
+    console.log(data)
 
-console.log('Stopping')
+})
