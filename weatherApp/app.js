@@ -1,7 +1,7 @@
 const request = require('request')
 
 const geocode = require('./utils/geocode')
-const forebase = require('./utils/forecast')
+const forecast = require('./utils/forecast')
 
 
 
@@ -28,3 +28,9 @@ geocode('Saint Paul', (error, data) => {
     console.log('Error', error)
     console.log('data', data)
 })
+
+
+forecast(-75.7088, 44.1545, (error, data) => {
+    console.log('Error', error)
+    console.log('Data', data)
+  })
