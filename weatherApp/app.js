@@ -30,7 +30,7 @@ geocode('Saint Paul', (error, data) => {
 })
 
 
-forecast(-75.7088, 44.1545, (error, data) => {
+forecast(44.9504, -93.0900, (error, data) => {
     console.log('Error', error)
     console.log('Data', data)
   })
