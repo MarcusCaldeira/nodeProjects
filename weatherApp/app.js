@@ -36,7 +36,7 @@ const request = require('request')
 // })
 
 const geocode = (address, callback) => {
-    const url = 'https://api.mapbox.com/geocoding/v5/mapbox.places/'+'.json?access_token=pk.eyJ1IjoibWFyY3VzNTUxMDQiLCJhIjoiY2p0ejBwbjNpMWMycjQzbzV3cjQ2eDAxaSJ9.SgG3t2jLCpWeKxWfZGwVkg&limit=1'
+    const url = 'https://api.mapbox.com/geocoding/v5/mapbox.places/'+ encodeURIComponent(address) +'.json?access_token=pk.eyJ1IjoibWFyY3VzNTUxMDQiLCJhIjoiY2p0ejBwbjNpMWMycjQzbzV3cjQ2eDAxaSJ9.SgG3t2jLCpWeKxWfZGwVkg&limit=1'
 
 }
 
