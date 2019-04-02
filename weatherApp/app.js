@@ -1,13 +1,16 @@
 const request = require('request')
 
+
+
+
 //Setting Up Query String- This is where the ? followed by the key value pairs come from.
 const url = 'https://api.darksky.net/forecast/c5d46e1b8a00c3c1f9d3790c5b3ee73d/44.9537,93.0900'
 // The first argument is the URL(declared above in const url, the second is the function you are going to run. )
 request({url:url,json:true}, (error, response) => {
     if (error){
         console.log('The weather service cant be reached...right now!')
-    } else if (response.body){
-        console.log('Unable to find the location')
+    } else if (response.body.error){
+        console.log('The WEATHER DATABSE IS DOWN RIGHT NOW!')
     }
     else{
         let JSON = response.body.currently
@@ -22,7 +25,7 @@ request({url:geocodeURL,json:true}, (error, response) => {
     if (error){
         console.log('The Location Database Cant be reached!.. YOUR INTERNET IS BROKE:D ')
 
-    } else if(response.body){
+    } else if(response.body.error){
         console.log('Unable to find the location')
 
     } else{
