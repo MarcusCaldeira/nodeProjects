@@ -1,5 +1,8 @@
 const request = require('request')
 
+const geocode = require('./utils/geocode')
+const forebase = require('./utils/forecast')
+
 
 
 
@@ -19,41 +22,7 @@ const request = require('request')
     
 // })
 
-// //Setting up the Geocoding API, so that users can search through a database to find what they need. 
-// const geocodeURL = 'https://api.mapbox.com/geocoding/v5/mapbox.places/Saint%20Paul.json?access_token=pk.eyJ1IjoibWFyY3VzNTUxMDQiLCJhIjoiY2p0ejBwbjNpMWMycjQzbzV3cjQ2eDAxaSJ9.SgG3t2jLCpWeKxWfZGwVkg&limit=1'
-// request({url:geocodeURL,json:true}, (error, response) => {
-//     if (error){
-//         console.log('The Location Database Cant be reached!.. YOUR INTERNET IS BROKE:D ')
 
-//     } else if(response.body.features.length===0){
-//         console.log('Unable to find the location')
-
-//     } else{
-//     const longitude = response.body.features[0].center[0]
-//     const latitude = response.body.features[0].center[1]
-//     console.log(latitude, longitude)
-//     }
-// })
-
-const geocode = (address, callback) => {
-    const url = 'https://api.mapbox.com/geocoding/v5/mapbox.places/'+ encodeURIComponent(address) +'.json?access_token=pk.eyJ1IjoibWFyY3VzNTUxMDQiLCJhIjoiY2p0ejBwbjNpMWMycjQzbzV3cjQ2eDAxaSJ9.SgG3t2jLCpWeKxWfZGwVkg&limit=1'
-    request({url: url, json: true}, (error, response) => {
-        if(error){
-            callback('Unable to connect to Location Services', undefined)
-        } else if (response.body.features.length===0) {
-            callback('Unable to find Location, try another search', undefined)
-        } else  {
-            callback(undefined, {
-                longititude: response.body.features[0].center[0],
-                latitude: response.body.features[0].center[1],
-                location: response.body.features[0].place_name
-            })
-
-
-
-        }
-    })
-}
 
 geocode('Saint Paul', (error, data) => {
     console.log('Error', error)
