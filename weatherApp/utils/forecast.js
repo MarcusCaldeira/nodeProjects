@@ -14,7 +14,7 @@ const forecast = (latitude,longitude, callback) => {
             callback('Unable to find the weather there', undefined)
         }else{
             callback(undefined, {
-                data:response.body.daily.data[0].summary + ' It is Currently' + response.body.currently.temperature + ' and there is a ' + response.body.currently.precipProbability + ' percent chance of rain'
+                data:response.body.daily.data[1].summary + ' It is Currently '+ response.body.currently.temperature + ' and there is a ' + response.body.currently.precipProbability + ' percent chance of rain'
             })
         }
     })
