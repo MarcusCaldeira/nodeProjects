@@ -24,5 +24,5 @@ const forecast = (latitude,longitude, callback) => {
 module.exports = forecast
 //    - Low level error, pass string for error
 //    - Coordinate error, pass string for error
-//    - Success, pass forecast string for data (same format as from before)
+// Success, pass forecast string for data (same format as from before)
 
