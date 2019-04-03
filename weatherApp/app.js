@@ -4,11 +4,14 @@ const request = require('request')
 const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
 
+//This creates the variable that is the argument passed through the command line.
+const address = process.argv[2]
+if (!address){
+    console.log('UMMM where is that?')
+}
 
-console.log(process.argv)
 
-
-geocode('Saint Paul', (error, data) => {
+geocode(address, (error, data) => {
     if (error){
         console.log(error)
         //Alt-I could use return as it would stop function execution. 
