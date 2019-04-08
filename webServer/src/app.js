@@ -23,11 +23,14 @@ app.get('/help', (req,res) => {
 })
 //Create the title page. 
 app.get('/about', (req,res) => {
-    res.send('About Page')
+    res.send('<h1>About</h1>')
 })
 //Create the weather page.
 app.get('/weather', (req, res) => {
-    res.send('Here is the weather')
+    res.send({
+        location: 'Saint Paul',
+        forecast: 'Its Pretty Sunny'
+    })
 })
 
 
