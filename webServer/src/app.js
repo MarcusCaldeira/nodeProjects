@@ -13,10 +13,13 @@ app.get('', (req,res) => {
 })
 //Create the Help Page Route.
 app.get('/help', (req,res) => {
-    res.send({
+    res.send([{
         name:'Marcus', 
         age: 27
-    })
+    },{
+        name: 'Sarah',
+        age: 28
+    }])
 })
 //Create the title page. 
 app.get('/about', (req,res) => {
