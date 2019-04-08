@@ -9,15 +9,15 @@ function
 (res = Response )
   */ 
 app.get('', (req,res) => {
-    res.send('Hello Express!')
+    res.send('<h1>WEATHER</h1>')
 })
 //Create the Help Page Route.
 app.get('/help', (req,res) => {
     res.send('Help Page')
 })
 //Create the title page. 
-app.get('/title', (req,res) => {
-    res.send('Title Page')
+app.get('/about', (req,res) => {
+    res.send('About Page')
 })
 //Create the weather page.
 app.get('/weather', (req, res) => {
