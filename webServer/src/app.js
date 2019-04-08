@@ -11,6 +11,28 @@ function
 app.get('', (req,res) => {
     res.send('Hello Express!')
 })
+//Create the Help Page Route.
+app.get('/help', (req,res) => {
+    res.send('Help Page')
+})
+//Create the title page. 
+app.get('/title', (req,res) => {
+    res.send('Title Page')
+})
+//Create the weather page.
+app.get('/weather', (req, res) => {
+    res.send('Here is the weather')
+})
+
+
+
+
+
+
+
+
+
+
 
 
 app.listen(2000, () => {
