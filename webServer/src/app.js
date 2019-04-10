@@ -10,7 +10,8 @@ const app = express()
 const publicDirectoryPath = path.join(__dirname,'../public')
 
 
-//This serves up static html, by using express and path(given to use by node)
+/*This serves up static html, by using express and path(given to use by node)
+- This is what the public can Access*/
 app.use(express.static(publicDirectoryPath))
 
 /*
