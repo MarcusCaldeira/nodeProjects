@@ -26,6 +26,9 @@ app.get('', (req, res) => {
         name: 'Marcus Caldeira'
     })
 })
+app.get('/about', (req,res) => {
+    res.render('about')
+})
 /*
 The app.get takes in the /route and then takes in a 
 function
