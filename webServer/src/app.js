@@ -8,7 +8,11 @@ const express = require('express')
 const app = express()
 //Generate the path to the public folder. 
 const publicDirectoryPath = path.join(__dirname,'../public')
+const viewsPath = path.join(__dirname, '../templates')
 
+
+app.set('view engine', 'hbs')
+app.set('views', viewsPath)
 /*HBS-This sets up handlebars(Templating Library)
  (view enginge: Key/Setting Name, value: name of installed module')
 app.set('view engine','hbs')
