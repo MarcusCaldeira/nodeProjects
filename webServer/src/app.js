@@ -19,7 +19,12 @@ app.use(express.static(publicDirectoryPath))
 
 
 app.get('', (req, res) => {
-    res.render('index.hbs')
+    /*First argument is the name of the view to render,
+     Second is an object with the views that need to be accessed */
+    res.render('index.hbs', {
+        title: 'Weather App',
+        name: 'Marcus Caldeira'
+    })
 })
 /*
 The app.get takes in the /route and then takes in a 
