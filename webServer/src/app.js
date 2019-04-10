@@ -17,7 +17,7 @@ app.set('view engine','hbs')
 app.use(express.static(publicDirectoryPath))
 
 
-
+//THIS is HBS(HandleBars to render dynamic templates)
 app.get('', (req, res) => {
     /*First argument is the name of the view to render,
      Second is an object with the views that need to be accessed */
@@ -27,8 +27,18 @@ app.get('', (req, res) => {
     })
 })
 app.get('/about', (req,res) => {
-    res.render('about')
+    res.render('about.hbs', {
+        title: 'About',
+        name: 'Marcus Caldeira'
+    })
 })
+app.get('/help', (req,res) => {
+    res.render('help.hbs', {
+        helpMessage:'I will try to help you'
+    })
+})
+//This ends handlebars
+
 /*
 The app.get takes in the /route and then takes in a 
 function
