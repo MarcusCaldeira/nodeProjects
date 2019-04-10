@@ -29,14 +29,6 @@ app.get('/weather', (req, res) => {
 
 
 
-
-
-
-
-
-
-
-
 app.listen(2000, () => {
     console.log('Server DID START')
 })
