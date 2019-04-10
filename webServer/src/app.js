@@ -1,23 +1,17 @@
 const path = require('path')
-
 const express = require('express')
-
-
-
-
+const hbs = require('hbs')
+//express App Object Variable.
 const app = express()
-//Generate the path to the public folder. 
+//Define paths for express config.  
 const publicDirectoryPath = path.join(__dirname,'../public')
-const viewsPath = path.join(__dirname, '../templates')
-
-
+const viewsPath = path.join(__dirname, '../templates/views')
+const partialsPath =  path.join(__dirname,'../templates/partials')
+//Setup Handlebars engine and views location
 app.set('view engine', 'hbs')
 app.set('views', viewsPath)
-/*HBS-This sets up handlebars(Templating Library)
- (view enginge: Key/Setting Name, value: name of installed module')
-app.set('view engine','hbs')
-/*This serves up static html, by using express and path(given to use by node)
-- This is what the public can Access*/
+hbs.registerPartials(partialsPath)
+//Sets up a static directory to serve. 
 app.use(express.static(publicDirectoryPath))
 
 
@@ -38,7 +32,9 @@ app.get('/about', (req,res) => {
 })
 app.get('/help', (req,res) => {
     res.render('help.hbs', {
-        helpMessage:'I will try to help you'
+        helpMessage:'I will try to help you',
+        title: 'Help Page',
+        name: 'Marcus Caldeira'
     })
 })
 //This ends handlebars
