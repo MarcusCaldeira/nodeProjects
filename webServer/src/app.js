@@ -9,7 +9,9 @@ const app = express()
 //Generate the path to the public folder. 
 const publicDirectoryPath = path.join(__dirname,'../public')
 
-
+/*HBS-This sets up handlebars(Templating Library)
+ (view enginge: Key/Setting Name, value: name of installed module')
+app.set('view engine','hbs')
 /*This serves up static html, by using express and path(given to use by node)
 - This is what the public can Access*/
 app.use(express.static(publicDirectoryPath))
