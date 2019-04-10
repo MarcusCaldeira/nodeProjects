@@ -16,6 +16,11 @@ app.set('view engine','hbs')
 - This is what the public can Access*/
 app.use(express.static(publicDirectoryPath))
 
+
+
+app.get('', (req, res) => {
+    res.render('index.hbs')
+})
 /*
 The app.get takes in the /route and then takes in a 
 function
