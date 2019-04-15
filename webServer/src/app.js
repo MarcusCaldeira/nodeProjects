@@ -53,16 +53,21 @@ app.get('/weather', (req, res) => {
 })
 
 app.get('/help/*', (req, res) => {
-    res.render('errorPage.hbs', {
-        title: 'Article Not Found'
-
+    res.render('404.hbs', {
+        title: 'Help Article Not Found',
+        name:'Marcus Caldeira',
+        errorMessage: 'Article Does Not Exist'  
     })
 
 })
 
 //This 404 Page must come last 
 app.get('*', (req, res) => {
-    res.render('errorPage.hbs')
+    res.render('404.hbs', {
+        title:'404 PAGE',
+        name: 'Marcus Caldeira',
+        errorMessage: 'Page Not Found'
+    })
 
 })
 
