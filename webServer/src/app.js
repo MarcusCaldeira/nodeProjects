@@ -51,6 +51,11 @@ app.get('/weather', (req, res) => {
         forecast: 'Its Pretty Sunny'
     })
 })
+//This 404 Page must come last 
+app.get('*', (req, res) => {
+    res.send('my 404 page')
+
+})
 
 
 
