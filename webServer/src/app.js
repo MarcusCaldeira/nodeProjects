@@ -53,13 +53,16 @@ app.get('/weather', (req, res) => {
 })
 
 app.get('/help/*', (req, res) => {
-    res.send('THIS IS THE HELP-Article not Found')
+    res.render('errorPage.hbs', {
+        title: 'Article Not Found'
+
+    })
 
 })
 
 //This 404 Page must come last 
 app.get('*', (req, res) => {
-    res.send('my 404 page')
+    res.render('errorPage.hbs')
 
 })
 
