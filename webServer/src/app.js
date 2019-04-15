@@ -56,7 +56,7 @@ app.get('/help/*', (req, res) => {
     res.render('404.hbs', {
         title: 'Help Article Not Found',
         name:'Marcus Caldeira',
-        errorMessage: 'Article Does Not Exist'  
+        errorMessage: 'Help Article Not Found'  
     })
 
 })
