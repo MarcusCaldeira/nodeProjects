@@ -53,7 +53,9 @@ app.get('/weather', (req, res) => {
     }
     console.log(req.query)
     res.send({
-        weather: []
+        forecast: 'Its snowing',
+        Location: 'Saint Paul',
+        address: req.query.adress
     })
 })
 
