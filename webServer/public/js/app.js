@@ -6,6 +6,11 @@ console.log('Client Side Javascript')
 
 const weatherForm =document.querySelector('form')
 const searchElement =document.querySelector('input')
+const messageOne = document.querySelector('#messageOne')
+const messageTwo = document.querySelector('#messageTwo')
+
+
+messageOne.textContent = 'From Js'
 
 
 weatherForm.addEventListener('submit', (e) => {
