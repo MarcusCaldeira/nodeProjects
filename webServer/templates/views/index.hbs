@@ -4,16 +4,22 @@
         <title>THE WEATHER APP</title> 
         <link rel="icon" href="/img/weather.png">
         <link rel="stylesheet" href="./css//styles.css">
-        <script src="./js/app.js"></script>
     </head>
     <body>
         <div class="main-content">
             {{>header}}
             <p>USE THIS SITE TO GET YOUR WEATHER</p>
 
+            <form>
+                <input placeholder="Location">
+                <button>Search</button>
+
+            </form>
+
         </div>
-        
+        <script src="./js/app.js"></script>
     </body>
+    
      <footer>
         {{>footer}}
     </footer>
