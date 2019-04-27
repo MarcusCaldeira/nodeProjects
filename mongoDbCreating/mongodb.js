@@ -16,6 +16,12 @@ MongoClient.connect(connectionURL, {useNewUrlParser: true}, (error,client) => {
     if(error){
        return console.log('Unable to Connect from Database')
     }
-    console.log('Connected to the database')
+    //gives a database refrence, so that we can use it in the code.
+    const db = client.db(dataBaseName)
+
+    db.collection('users').insertOne({
+        name: 'Marcus',
+        age:27
+    })
 
 })
