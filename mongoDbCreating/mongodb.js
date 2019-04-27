@@ -19,9 +19,31 @@ MongoClient.connect(connectionURL, {useNewUrlParser: true}, (error,client) => {
     //gives a database refrence, so that we can use it in the code.
     const db = client.db(dataBaseName)
 
-    db.collection('users').insertOne({
-        name: 'Marcus',
-        age:27
+    // db.collection('users').insertOne({
+    //     name: 'Marcus',
+    //     age:27
+    // }, (error, result) => {
+    //     if (error){
+    //         console.log('unable to inser user.')
+    //     }
+    //     console.log(result.ops)
+
+    // })
+    db.collection('users').insertMany([
+        {
+            name: 'Jen',
+            age: 28
+        },
+        {
+            name:'Marcus',
+            age: 28
+        }
+    ], (error, result) => {
+        if (error) {
+            console.log('Unable to print')
+        }
+        console.log(result.ops)
+
     })
 
 })
