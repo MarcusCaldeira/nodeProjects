@@ -36,16 +36,16 @@
 // add(1, 4, (sum) => {
 //     console.log(sum) // Should print: 5
 // })
-const doWorkCallback = (callback) => {
-    setTimeout(() => {
-        // callback('This is My Error', undefined)
-        callback(undefined, [1,4,7])
-    },2000)
-}
+// const doWorkCallback = (callback) => {
+//     setTimeout(() => {
+//         // callback('This is My Error', undefined)
+//         callback(undefined, [1,4,7])
+//     },2000)
+// }
 
-doWorkCallback((error,result) => {
-    if (error){
-        return console.log(error)
-    }
-    console.log(result)
-})
+// doWorkCallback((error,result) => {
+//     if (error){
+//         return console.log(error)
+//     }
+//     console.log(result)
+// })
