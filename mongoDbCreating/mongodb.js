@@ -13,9 +13,6 @@ const { MongoClient, ObjectID } = require('mongodb')
 const connectionURL = 'mongodb://127.0.0.1:27017'
 const dataBaseName = 'task-manager'
 
-const id = new ObjectID()
-console.log(id)
-console.log(id.getTimestamp())
 
 /*MongoClient to connect to server.the only method(ConnectionURL,
     OptionsObject{useNewURlParser:true},
