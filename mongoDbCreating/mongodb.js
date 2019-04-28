@@ -24,17 +24,17 @@ MongoClient.connect(connectionURL, {useNewUrlParser: true}, (error,client) => {
     //gives a database refrence, so that we can use it in the code.
     const db = client.db(dataBaseName)
 
-    db.collection('users').insertOne({
-        _id:id,
-        name: 'Bryce',
-        age:54
-    }, (error, result) => {
-        if (error){
-            console.log('unable to inser user.')
-        }
-        console.log(result.ops)
+    // db.collection('users').insertOne({
+    //     _id:id,
+    //     name: 'Bryce',
+    //     age:54
+    // }, (error, result) => {
+    //     if (error){
+    //         console.log('unable to inser user.')
+    //     }
+    //     console.log(result.ops)
 
-    })
+    // })
     // db.collection('users').insertMany([
     //     {
     //         name: 'Jen',
@@ -70,6 +70,13 @@ MongoClient.connect(connectionURL, {useNewUrlParser: true}, (error,client) => {
     //     }
     //     console.log(result.ops)
     // })
+    db.collection('users').findOne({name: 'Jen'}, (error, user) => {
+        if(error){
+            console.log('Unable To fetch data')
+        }
+        console.log(user)
+
+    })
 
 
 })
