@@ -70,7 +70,7 @@ MongoClient.connect(connectionURL, {useNewUrlParser: true}, (error,client) => {
     //     }
     //     console.log(result.ops)
     // })
-    db.collection('users').findOne({name: 'Jen'}, (error, user) => {
+    db.collection('users').findOne({_id: new ObjectID("5cc51b6a6bdf1f4b6ab80379")}, (error, user) => {
         if(error){
             console.log('Unable To fetch data')
         }
