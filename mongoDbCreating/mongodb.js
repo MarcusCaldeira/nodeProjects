@@ -88,8 +88,8 @@ MongoClient.connect(connectionURL, {useNewUrlParser: true}, (error,client) => {
         }
         console.log(task)
     })
-    db.collection('taks').find({completed: false}.toArray((error, tasks) => {
-        console.log(tasks)
+    db.collection('taks').find({completed: false}).toArray((error,task) => {
+        console.log(task)
     })
 
 
