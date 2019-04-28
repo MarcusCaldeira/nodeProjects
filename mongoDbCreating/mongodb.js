@@ -1,8 +1,12 @@
 //Create Read Update and Delete - the Crud Operations
 
-const mongodb = require('mongodb')
-// The MongoClient gives us access to the function nessecary to complete the crud operations. 
-const MongoClient = mongodb.MongoClient
+// const mongodb = require('mongodb')
+// // The MongoClient gives us access to the function nessecary to complete the crud operations. 
+// const MongoClient = mongodb.MongoClient
+// const ObjectID = mongodb.ObjectID
+
+//This is a shorthand for grabbing things with MongoDB
+const { MongoClient, ObjectID } = require('mongodb')
 
 
 //Using Mongos Protocol://IP Adress(localhost gets weird):Port Number
@@ -45,24 +49,25 @@ MongoClient.connect(connectionURL, {useNewUrlParser: true}, (error,client) => {
     //     console.log(result.ops)
 
     // })
-    db.collection('taks').insertMany([
-        {
-            description: '',
-            completed: false
-        },
-        {
-            description: '',
-            completed: false
-        },
-        {
-            description: '',
-            completed: false
-        },
-    ], (error, result) => {
-        if (error){
-            console.log('unable to save to database')
-        }
-        console.log(result.ops)
-    })
+    // db.collection('taks').insertMany([
+    //     {
+    //         description: '',
+    //         completed: false
+    //     },
+    //     {
+    //         description: '',
+    //         completed: false
+    //     },
+    //     {
+    //         description: '',
+    //         completed: false
+    //     },
+    // ], (error, result) => {
+    //     if (error){
+    //         console.log('unable to save to database')
+    //     }
+    //     console.log(result.ops)
+    // })
+
 
 })
