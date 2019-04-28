@@ -70,17 +70,26 @@ MongoClient.connect(connectionURL, {useNewUrlParser: true}, (error,client) => {
     //     }
     //     console.log(result.ops)
     // })
-    db.collection('users').findOne({_id: new ObjectID("5cc51b6a6bdf1f4b6ab80379")}, (error, user) => {
+    // db.collection('users').findOne({_id: new ObjectID("5cc51b6a6bdf1f4b6ab80379")}, (error, user) => {
+    //     if(error){
+    //         console.log('Unable To fetch data')
+    //     }
+    //     console.log(user)
+    // })
+    // db.collection('users').find({age: 27}).toArray((error,users) => {
+    //     console.log(users)
+    // })
+    // db.collection('users').find({age: 27}).count((error,users) => {
+    //     console.log(users)
+    // })
+    db.collection('taks').findOne({_id: new ObjectID ('5cc5141b7e1bd449d8bfdad0')}, (error,task) => {
         if(error){
-            console.log('Unable To fetch data')
+            console.log('there is an error')
         }
-        console.log(user)
+        console.log(task)
     })
-    db.collection('users').find({age: 27}).toArray((error,users) => {
-        console.log(users)
-    })
-    db.collection('users').find({age: 27}).count((error,users) => {
-        console.log(users)
+    db.collection('taks').find({completed: false}.toArray((error, tasks) => {
+        console.log(tasks)
     })
 
 
