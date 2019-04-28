@@ -79,6 +79,9 @@ MongoClient.connect(connectionURL, {useNewUrlParser: true}, (error,client) => {
     db.collection('users').find({age: 27}).toArray((error,users) => {
         console.log(users)
     })
+    db.collection('users').find({age: 27}).count((error,users) => {
+        console.log(users)
+    })
 
 
 })
