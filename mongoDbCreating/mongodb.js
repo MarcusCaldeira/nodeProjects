@@ -29,21 +29,40 @@ MongoClient.connect(connectionURL, {useNewUrlParser: true}, (error,client) => {
     //     console.log(result.ops)
 
     // })
-    db.collection('users').insertMany([
+    // db.collection('users').insertMany([
+    //     {
+    //         name: 'Jen',
+    //         age: 28
+    //     },
+    //     {
+    //         name:'Marcus',
+    //         age: 28
+    //     }
+    // ], (error, result) => {
+    //     if (error) {
+    //         console.log('Unable to save to database')
+    //     }
+    //     console.log(result.ops)
+
+    // })
+    db.collection('taks').insertMany([
         {
-            name: 'Jen',
-            age: 28
+            description: '',
+            completed: false
         },
         {
-            name:'Marcus',
-            age: 28
-        }
+            description: '',
+            completed: false
+        },
+        {
+            description: '',
+            completed: false
+        },
     ], (error, result) => {
-        if (error) {
-            console.log('Unable to print')
+        if (error){
+            console.log('unable to save to database')
         }
         console.log(result.ops)
-
     })
 
 })
