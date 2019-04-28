@@ -15,6 +15,7 @@ const dataBaseName = 'task-manager'
 
 const id = new ObjectID()
 console.log(id)
+console.log(id.getTimestamp())
 
 /*MongoClient to connect to server.the only method(ConnectionURL,
     OptionsObject{useNewURlParser:true},
@@ -26,16 +27,17 @@ MongoClient.connect(connectionURL, {useNewUrlParser: true}, (error,client) => {
     //gives a database refrence, so that we can use it in the code.
     const db = client.db(dataBaseName)
 
-    // db.collection('users').insertOne({
-    //     name: 'Marcus',
-    //     age:27
-    // }, (error, result) => {
-    //     if (error){
-    //         console.log('unable to inser user.')
-    //     }
-    //     console.log(result.ops)
+    db.collection('users').insertOne({
+        _id:id,
+        name: 'Bryce',
+        age:54
+    }, (error, result) => {
+        if (error){
+            console.log('unable to inser user.')
+        }
+        console.log(result.ops)
 
-    // })
+    })
     // db.collection('users').insertMany([
     //     {
     //         name: 'Jen',
