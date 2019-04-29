@@ -25,13 +25,25 @@ MongoClient.connect(connectionURL, {useNewUrlParser: true}, (error,client) => {
     const db = client.db(dataBaseName)
 
 
-    db.collection('users').updateOne({
-        _id: new ObjectID('5cc49e716ccdfe424e4c1521'),   
-    },{
-        $inc: {
-            age: 1
-        }
+    // db.collection('users').updateOne({
+    //     _id: new ObjectID('5cc49e716ccdfe424e4c1521'),   
+    // },{
+    //     $inc: {
+    //         age: 1
+    //     }
 
+    // }).then((result) => {
+    //     console.log(result)
+    // }).catch((error) => {
+    //     console.log(error)
+    // })
+
+    db.collection('taks').updateMany({
+        completed: false
+    }, {
+        $set:{
+            completed:true
+        }
     }).then((result) => {
         console.log(result)
     }).catch((error) => {
