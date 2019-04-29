@@ -24,8 +24,8 @@ MongoClient.connect(connectionURL, {useNewUrlParser: true}, (error,client) => {
     //gives a database refrence, so that we can use it in the code.
     const db = client.db(dataBaseName)
 
-    db.collection('users').deleteOne({
-        description : This is going to get deleted
+    db.collection('taks').deleteOne({
+        description : 'This is going to get deleted'
     }).then((result) =>{
         console.log(result)
     }).catch((error) => {
