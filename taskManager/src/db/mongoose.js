@@ -8,7 +8,11 @@ mongoose.connect('mongodb://127.0.1:27017/taskManagerApi', {
 //Takes two arguments(stringNameOfModel,definition-the fields we want)
 const User = mongoose.model(('User'), {
     //Set:{valueAnObject}
-    name:{},
-    age:{}
+    name:{
+        type:String
+    },
+    age:{
+        age:Number
+    }
 
 })
