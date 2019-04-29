@@ -28,7 +28,8 @@ const User = mongoose.model(('User'), {
 // })
 const Task = mongoose.model(('tasks'), {
     description:{
-        type:String
+        type:String,
+        required:true
     },
     completed:{
         type:Boolean
