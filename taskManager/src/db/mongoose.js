@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const validator = require('validator')
 //This will connect to the database. URL+PORT+PORT & Options Object 
 mongoose.connect('mongodb://127.0.1:27017/taskManagerApi', {
     useNewUrlParser: true,
@@ -11,6 +12,16 @@ const User = mongoose.model(('User'), {
     name:{
         type:String,
         required:true
+    },
+    email:{
+        type:String,
+        required:true,
+        validate(value){
+            if(!validator.isEmail(value)){
+                throw new Error('Thats not a valid email')
+            }
+        }
+
     },
     age:{
         type:Number,
@@ -25,7 +36,7 @@ const User = mongoose.model(('User'), {
 
 const me = new User ({
     name:'Hugo',
-    age: -1
+    email:'Make@'
 })
 
 me.save().then((me) => {
