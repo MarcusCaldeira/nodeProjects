@@ -13,12 +13,19 @@ const User = mongoose.model(('User'), {
         required:true
     },
     age:{
-        type:Number
+        type:Number,
+        validate(value){
+            if (value < 0){
+                throw new Error('Your Age Needs to be a real number')
+            }
+
+        }
     }
 })
 
 const me = new User ({
-    
+    name:'Hugo',
+    age: -1
 })
 
 me.save().then((me) => {
