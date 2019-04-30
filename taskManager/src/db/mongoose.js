@@ -64,16 +64,18 @@ mongoose.connect('mongodb://127.0.1:27017/taskManagerApi', {
 
 const Task = mongoose.model(('tasks'), {
     description:{
-        type:String
+        type:String,
+        required:true,
+        trim:true
     },
     completed:{
-        type:Boolean
+        type:Boolean,
+        default:false
     }
 })
 
 const task = new Task({
-    description:'This is my first Task',
-    completed:false
+   
 })
 
 task.save().then((task) => {
