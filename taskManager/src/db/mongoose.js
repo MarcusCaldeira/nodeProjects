@@ -11,7 +11,8 @@ const User = mongoose.model(('User'), {
     //Set:{valueAnObject}
     name:{
         type:String,
-        required:true
+        required:true,
+        trim: true
     },
     email:{
         type:String,
@@ -20,11 +21,14 @@ const User = mongoose.model(('User'), {
             if(!validator.isEmail(value)){
                 throw new Error('Thats not a valid email')
             }
-        }
+        },
+        trim:true,
+        lowercase:true
 
     },
     age:{
         type:Number,
+        default: 0,
         validate(value){
             if (value < 0){
                 throw new Error('Your Age Needs to be a real number')
@@ -35,8 +39,8 @@ const User = mongoose.model(('User'), {
 })
 
 const me = new User ({
-    name:'Hugo',
-    email:'Make@'
+    name:'Hugo    ',
+    email:'Make@gmail.COM   ',
 })
 
 me.save().then((me) => {
