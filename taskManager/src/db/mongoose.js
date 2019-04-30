@@ -35,12 +35,25 @@ const User = mongoose.model(('User'), {
             }
 
         }
+    },
+    password:{
+        type:String,
+        required: true,
+        trim:true,
+        minLength: 7,
+        validate(value){
+            if (value.toLowerCase().includes('password')){
+                throw new Error ('Password cant contain "password"')
+            }
+        }
     }
 })
 
 const me = new User ({
+
     name:'Hugo    ',
     email:'Make@gmail.COM   ',
+    password:'Phone898!'
 })
 
 me.save().then((me) => {
