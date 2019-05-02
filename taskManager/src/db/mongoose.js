@@ -75,7 +75,8 @@ const Task = mongoose.model(('tasks'), {
 })
 
 const task = new Task({
-   
+    description:'        Eat Lunch',
+    completed: true
 })
 
 task.save().then((task) => {
