@@ -5,6 +5,7 @@ const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
 //express App Object Variable.
 const app = express()
+const port = process.env.PORT || 3000
 //Define paths for express config.  
 const publicDirectoryPath = path.join(__dirname,'../public')
 const viewsPath = path.join(__dirname, '../templates/views')
@@ -15,6 +16,8 @@ app.set('views', viewsPath)
 hbs.registerPartials(partialsPath)
 //Sets up a static directory to serve. 
 app.use(express.static(publicDirectoryPath))
+
+
 
 
 //THIS is HBS(HandleBars to render dynamic templates)
@@ -106,6 +109,6 @@ app.get('*', (req, res) => {
 
 
 
-app.listen(2000, () => {
-    console.log('Server DID START')
+app.listen(port, () => {
+    console.log('Server DID START' + port)
 })
